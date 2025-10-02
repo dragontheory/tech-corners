@@ -1,0 +1,424 @@
+
+<style>
+  @import url(https://fonts.googleapis.com/css?family=Electrolize);
+
+html {
+  line-height: 1;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+@-webkit-keyframes svg_outline {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes svg_outline {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes svg_outline_hide {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-width: 0;
+  }
+}
+@keyframes svg_outline_hide {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-width: 0;
+  }
+}
+@-webkit-keyframes svg_fill_active {
+  100% {
+    fill: #e25027;
+    fill-opacity: 1;
+  }
+}
+@keyframes svg_fill_active {
+  100% {
+    fill: #e25027;
+    fill-opacity: 1;
+  }
+}
+@-webkit-keyframes svg_fill_inactive {
+  100% {
+    fill: #ebebeb;
+    fill-opacity: 1;
+  }
+}
+@keyframes svg_fill_inactive {
+  100% {
+    fill: #ebebeb;
+    fill-opacity: 1;
+  }
+}
+@-webkit-keyframes svg_stroke_inactive {
+  100% {
+    stroke: #ebebeb;
+  }
+}
+@keyframes svg_stroke_inactive {
+  100% {
+    stroke: #ebebeb;
+  }
+}
+@-webkit-keyframes svg_stroke_active {
+  100% {
+    stroke: #e25027;
+  }
+}
+@keyframes svg_stroke_active {
+  100% {
+    stroke: #e25027;
+  }
+}
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Electrolize", sans-serif;
+  background: #070707;
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.wrapper > div {
+  margin: 20px;
+}
+
+.bttn {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+.bttn span {
+  display: block;
+  padding: 30px;
+  font-size: 30px;
+  color: #ffb902;
+  text-transform: uppercase;
+}
+.bttn:hover {
+  cursor: pointer;
+}
+.bttn.out .corners {
+  position: absolute;
+  width: 100%;
+  transition-duration: 0.3s;
+}
+.bttn.out .corners:before, .bttn.out .corners:after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-color: cyan;
+  border-style: solid;
+  transition-duration: 0.3s;
+  transform: translateZ(0);
+}
+.bttn.out .corners.top:before {
+  border-width: 1px 0 0 1px;
+}
+.bttn.out .corners.top:after {
+  border-width: 1px 1px 0 0;
+}
+.bttn.out .corners.bottom:before {
+  border-width: 0 0 1px 1px;
+}
+.bttn.out .corners.bottom:after {
+  border-width: 0 1px 1px 0;
+}
+.bttn.out .corners:before {
+  left: 0;
+}
+.bttn.out .corners:after {
+  right: 0;
+}
+.bttn.out .corners.top {
+  top: 0;
+}
+.bttn.out .corners.bottom {
+  bottom: 7px;
+}
+.bttn.out:hover .corners:before {
+  left: 20px;
+}
+.bttn.out:hover .corners:after {
+  right: 20px;
+}
+.bttn.out:hover .corners.top {
+  top: 20px;
+}
+.bttn.out:hover .corners.bottom {
+  bottom: 27px;
+}
+.bttn.in .corners {
+  position: absolute;
+  width: 100%;
+  transition-duration: 0.3s;
+}
+.bttn.in .corners:before, .bttn.in .corners:after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-color: #ffb902;
+  border-style: solid;
+  transition-duration: 0.3s;
+  transform: translateZ(0);
+}
+.bttn.in .corners.top:before {
+  border-width: 1px 0 0 1px;
+}
+.bttn.in .corners.top:after {
+  border-width: 1px 1px 0 0;
+}
+.bttn.in .corners.bottom:before {
+  border-width: 0 0 1px 1px;
+}
+.bttn.in .corners.bottom:after {
+  border-width: 0 1px 1px 0;
+}
+.bttn.in .corners:before {
+  left: 20px;
+}
+.bttn.in .corners:after {
+  right: 20px;
+}
+.bttn.in .corners.top {
+  top: 20px;
+}
+.bttn.in .corners.bottom {
+  bottom: 27px;
+}
+.bttn.in:hover .corners:before {
+  left: 0;
+}
+.bttn.in:hover .corners:after {
+  right: 0;
+}
+.bttn.in:hover .corners.top {
+  top: 0;
+}
+.bttn.in:hover .corners.bottom {
+  bottom: 7px;
+}
+
+.bttn.cyan span {
+  color: cyan;
+}
+.bttn.cyan .corners:after, .bttn.cyan .corners:before {
+  border-color: cyan;
+}
+
+.box {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 200px;
+}
+.box .content {
+  margin: 20px;
+  padding: 20px;
+  border: 1px dashed transparent;
+  color: white;
+  font-size: 14px;
+  line-height: 1.3;
+}
+.box.out .corners {
+  position: absolute;
+  width: 100%;
+  transition-duration: 0.3s;
+}
+.box.out .corners:before, .box.out .corners:after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-color: cyan;
+  border-style: solid;
+  transition-duration: 0.3s;
+  transform: translateZ(0);
+}
+.box.out .corners.top:before {
+  border-width: 1px 0 0 1px;
+}
+.box.out .corners.top:after {
+  border-width: 1px 1px 0 0;
+}
+.box.out .corners.bottom:before {
+  border-width: 0 0 1px 1px;
+}
+.box.out .corners.bottom:after {
+  border-width: 0 1px 1px 0;
+}
+.box.out .corners:before {
+  left: 0;
+}
+.box.out .corners:after {
+  right: 0;
+}
+.box.out .corners.top {
+  top: 0;
+}
+.box.out .corners.bottom {
+  bottom: 7px;
+}
+.box.out:hover .corners:before {
+  left: 20px;
+}
+.box.out:hover .corners:after {
+  right: 20px;
+}
+.box.out:hover .corners.top {
+  top: 20px;
+}
+.box.out:hover .corners.bottom {
+  bottom: 27px;
+}
+.box.out .content {
+  border-color: rgba(0, 255, 255, 0.5);
+  color: cyan;
+}
+.box.in .corners {
+  position: absolute;
+  width: 100%;
+  transition-duration: 0.3s;
+}
+.box.in .corners:before, .box.in .corners:after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-color: #ffb902;
+  border-style: solid;
+  transition-duration: 0.3s;
+  transform: translateZ(0);
+}
+.box.in .corners.top:before {
+  border-width: 1px 0 0 1px;
+}
+.box.in .corners.top:after {
+  border-width: 1px 1px 0 0;
+}
+.box.in .corners.bottom:before {
+  border-width: 0 0 1px 1px;
+}
+.box.in .corners.bottom:after {
+  border-width: 0 1px 1px 0;
+}
+.box.in .corners:before {
+  left: 20px;
+}
+.box.in .corners:after {
+  right: 20px;
+}
+.box.in .corners.top {
+  top: 20px;
+}
+.box.in .corners.bottom {
+  bottom: 27px;
+}
+.box.in:hover .corners:before {
+  left: 0;
+}
+.box.in:hover .corners:after {
+  right: 0;
+}
+.box.in:hover .corners.top {
+  top: 0;
+}
+.box.in:hover .corners.bottom {
+  bottom: 7px;
+}
+.box.in .content {
+  border-color: rgba(255, 185, 2, 0.5);
+  color: #ffb902;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+</style>
+<div class='wrapper'>
+  <div class='bttn out cyan'>
+    <span>Infiniti</span>
+    <div class='corners top'></div>
+    <div class='corners bottom'></div>
+  </div>
+  <div class='bttn in'>
+    <span>Infinity</span>
+    <div class='corners top'></div>
+    <div class='corners bottom'></div>
+  </div>
+  <div class='box out'>
+    <div class='content'>
+      <p>Bacon ipsum dolor amet meatloaf corned beef frankfurter tongue</p>
+    </div>
+    <div class='corners top'></div>
+    <div class='corners bottom'></div>
+  </div>
+  <div class='box in'>
+    <div class='content'>
+      <p>Short ribs boudin cow landjaeger spare ribs cupim.</p>
+    </div>
+    <div class='corners top'></div>
+    <div class='corners bottom'></div>
+  </div>
+</div>
